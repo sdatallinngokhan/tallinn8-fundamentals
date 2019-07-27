@@ -2,16 +2,29 @@ package week3.varargsPack;
 
 public class VarargsExample {
 
+    // without vararg
     public double sumWithoutVarargs(double x, double y, double z, double t) {
         double result = x + y + z + t;
 
         return result;
     }
 
+    // with vararg
     public double sumWithVarargs(double... nums) {
         double result = 0;
 
         for (double num : nums) {
+            result = result + num;
+        }
+
+        return result;
+    }
+
+    // with array
+    public double sumWithArray(double[] arr) {
+        double result = 0;
+
+        for (double num : arr) {
             result = result + num;
         }
 
@@ -31,5 +44,9 @@ public class VarargsExample {
 
         double result2 = varargsExample.sumWithVarargs(x, y, z, t);
         System.out.println("Result with varargs : " + result2);
+
+        double[] arr = {x, y, z, t};
+        double result3 = varargsExample.sumWithArray(arr);
+        System.out.println("Result with array : " + result3);
     }
 }
